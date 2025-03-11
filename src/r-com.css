@@ -1,0 +1,51 @@
+.container-rs {
+    width: 60%;
+    margin-top: 4px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 2px solid rgb(68, 68, 68); */
+    border-radius: 6px;
+}
+
+.comment-bottom {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.actual-comment {}
+
+.action-buttons div {
+    font-size: small;
+    cursor: pointer;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out
+}
+
+.action-buttons div:hover {
+    cursor: pointer;
+    text-shadow: rgb(244, 245, 244) 0px 0px 2px;
+}
+
+.profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 6px;
+}
+
+.pic {
+    height: 35px;
+    width: 35px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(68, 68, 68);
+    border-radius: 50%;
+}
+
+.name {
+    font-weight: 500;
+}
