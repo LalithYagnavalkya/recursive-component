@@ -6,8 +6,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    /* border: 2px solid rgb(68, 68, 68); */
+    border-left: 2px solid white;
     border-radius: 6px;
+    margin-left: 1rem;
 }
 
 .comment-bottom {

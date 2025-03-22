@@ -38,25 +38,30 @@ function App() {
   }
 
   return (
-    <>
-      <div className='ourComponent'>
-        <div className='allTheComments'>
-          {
-            comments.map(x => <Comment key={ x._id } comment={ x } addComment={ addComment } />)
-          }
-        </div>
-        <div className='WhereWeComment'>
-          <form onSubmit={ (e) => addComment(e, textRef) }>
-            <textarea
-              onKeyDown={ (e) => {
-                if (e.code === 'Enter') addComment(e, textRef)
-              } }
-              ref={ textRef }
-            />  <button type='submit'>Go</button>
-          </form>
-        </div>
+
+    <div className='ourComponent'>
+      <div className='allTheComments'>
+        {
+          comments.filter(x => x.parentId === null).map(x => <Comment
+            key={ x._id }
+            comment={ x }
+            addComment={ addComment }
+            comments={ comments }
+          />)
+        }
       </div>
-    </>
+      <div className='WhereWeComment'>
+        <form onSubmit={ (e) => addComment(e, textRef) }>
+          <textarea
+            onKeyDown={ (e) => {
+              if (e.code === 'Enter') addComment(e, textRef)
+            } }
+            ref={ textRef }
+          />  <button type='submit'>Go</button>
+        </form>
+      </div>
+    </div>
+
   )
 }
 
