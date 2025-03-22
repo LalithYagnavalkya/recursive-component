@@ -32,6 +32,9 @@
   border-radius: 6px;
   overflow-y: hidden;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 .allTheComments {
   flex: 0.8;
