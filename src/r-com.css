@@ -6,12 +6,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    border-left: 2px solid white;
+    border-left: 2px solid rgb(199, 196, 196);
     border-radius: 12px;
     margin-left: 2rem;
-    transition-duration: 1600ms;
-    transition-timing-function: ease;
 }
+
 @keyframes fadeSlide {
     from {
         opacity: 0;
@@ -27,6 +26,7 @@
 .container-rs {
     animation: fadeSlide 0.4s ease-in-out;
 }
+
 .comment-bottom {
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@
 }
 
 .reply-box {
-   
+
     padding: 1rem 0rem;
 }
 
@@ -100,4 +100,10 @@
 
 .name {
     font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .container-rs {
+        width: 98%;
+    }
 }

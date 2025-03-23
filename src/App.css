@@ -5,21 +5,6 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
 .ourComponent {
   display: flex;
   position: relative;
@@ -59,7 +44,7 @@
 }
 
 .WhereWeComment textarea {
-    flex: 0.5;
+  flex: 0.5;
   border-radius: 8px;
   min-height: 1.2rem;
   max-height: 5.7rem;
@@ -117,4 +102,16 @@ textarea::-webkit-scrollbar-thumb {
 
 .read-the-docs {
   color: #888;
+}
+@media (max-width: 600px) {
+  #root {
+      margin: 0 auto;
+      padding: 0rem;
+      /* text-align: center; */
+    }
+  .ourComponent {
+     height: 100vh;
+     margin-top: 2rem;
+     width: fit-content;
+    }
 }
