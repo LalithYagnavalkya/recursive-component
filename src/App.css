@@ -17,6 +17,7 @@
   border-radius: 6px;
   overflow-y: hidden;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -57,7 +58,8 @@
   field-sizing: content;
   resize: none;
 }
-.allTheComments{
+
+.allTheComments {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -103,15 +105,28 @@ textarea::-webkit-scrollbar-thumb {
 .read-the-docs {
   color: #888;
 }
+
 @media (max-width: 600px) {
   #root {
-      margin: 0 auto;
-      padding: 0rem;
-      /* text-align: center; */
-    }
+    margin: 0 auto;
+    padding: 0rem;
+    /* text-align: center; */
+  }
+
   .ourComponent {
-     height: 100vh;
-     margin-top: 2rem;
-     width: fit-content;
-    }
+    height: 100vh;
+    margin-top: 2rem;
+    width: fit-content;
+  }
+
+  .WhereWeComment {
+    /* position: absolute; */
+    width: 80%;
+    align-self: center;
+  }
+
+  .WhereWeComment textarea {
+    min-width: 13rem;
+    outline: 1px solid rgb(56, 56, 56);
+  }
 }

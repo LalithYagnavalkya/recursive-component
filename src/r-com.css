@@ -38,10 +38,6 @@
 .reply-box {
     display: flex;
     justify-content: flex-start;
-}
-
-.reply-box {
-
     padding: 1rem 0rem;
 }
 
