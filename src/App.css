@@ -25,6 +25,7 @@
 .allTheComments {
   flex: 0.8;
   padding-bottom: 5rem;
+  font-family: monospace;
 }
 
 .WhereWeComment {
@@ -115,7 +116,7 @@ textarea::-webkit-scrollbar-thumb {
 
   .ourComponent {
     height: 90vh;
-    margin-top: 0rem;
+    margin-top: -2rem;
     width: fit-content;
   }
 
