@@ -112,7 +112,6 @@ textarea::-webkit-scrollbar-thumb {
   .ourComponent {
      height: 100vh;
      margin-top: 2rem;
-     
      width: fit-content;
     }
 }
