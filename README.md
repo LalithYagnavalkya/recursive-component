@@ -1,8 +1,6 @@
-# React + Vite
+# Recursive component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Recreating reddit comment section where users can comment and reply to each other comments and maintian threads of conversations. 
+or a file system where you can create folders and subfolders 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+here is the link: https://recursive-component-bay.vercel.app/
