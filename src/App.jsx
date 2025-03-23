@@ -12,8 +12,44 @@ import Comment from './recursive-comment';
 
 function App() {
   const textRef = useRef();
-  const [comments, setComments] = useState([]);
-  const [counter, setCounter] = useState(1);
+  const [comments, setComments] = useState([
+    {
+      "id": 1,
+      "text": "This is a recursion component",
+      "parentId": null
+    },
+    {
+      "id": 2,
+      "text": "Where we can maintain threads of conversations",
+      "parentId": 1
+    },
+    {
+      "id": 3,
+      "text": "hide replis at any level!",
+      "parentId": null
+    },
+    {
+      "id": 4,
+      "text": "this is first level",
+      "parentId": 3
+    },
+    {
+      "id": 5,
+      "text": "second",
+      "parentId": 4
+    },
+    {
+      "id": 6,
+      "text": "third",
+      "parentId": 5
+    },
+    {
+      "id": 7,
+      "text": "I didn't spend time on mobile view css",
+      "parentId": null
+    }
+  ]);
+  const [counter, setCounter] = useState(8);
 
   const addComment = async (e, textRef, parentId = null) => {
     e?.preventDefault();

@@ -101,5 +101,6 @@
 @media (max-width: 600px) {
     .container-rs {
         width: 98%;
+        text-wrap: balance;
     }
 }
