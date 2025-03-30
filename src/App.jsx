@@ -25,7 +25,7 @@ function App() {
     },
     {
       "id": 3,
-      "text": "hide replis at any level!",
+      "text": "hide replies at any level!",
       "parentId": null
     },
     {
