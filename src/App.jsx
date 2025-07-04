@@ -1,14 +1,8 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import Comment from './recursive-comment';
+import { io } from 'socket.io-client';
 
-/* 
-{
-  comment: 'this is primary',
-  id: 0,
-  parentId: null,
-  }
-*/
 
 function App() {
   const textRef = useRef();
@@ -50,6 +44,7 @@ function App() {
     }
   ]);
   const [counter, setCounter] = useState(8);
+  const [username, setUsername] = useState();
 
   const addComment = async (e, textRef, parentId = null) => {
     e?.preventDefault();
@@ -72,6 +67,17 @@ function App() {
     })
     setCounter(prev => prev + 1)
   }
+
+  useEffect(() => {
+   const name =  prompt("enter your name");
+   console.log(name)
+   const newSocket = io('http://localhost:3000')
+   newSocket.on('connection', () => {
+    console.log('connected to server');
+    newSocket.emit('add-user', user?.userId);
+   })
+  }, [])
+  
 
   return (
 
