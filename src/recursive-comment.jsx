@@ -11,7 +11,7 @@ const Comment = ({ comment, addComment, comments }) => {
             <div className='comment-top'>
                 <div className="profile">
                     <div className="pic"></div>
-                    <div className="name">yuiu_01</div>
+                    <div className="name">{comment.username}</div>
                 </div>
             </div>
             <div className='comment-bottom'>
