@@ -6,54 +6,93 @@ import { io } from 'socket.io-client';
 
 function App() {
   const textRef = useRef();
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([
+    {
+      "id": 1,
+      "text": "This is a recursion component, OFFLINE",
+      "username": 'offline_user',
+      "parentId": null
+    },
+    {
+      "id": 2,
+      "text": "Where we can maintain threads of conversations",
+      "username": 'offline_user',
+      "parentId": 1
+    },
+    {
+      "id": 3,
+      "text": "hide replies at any level!",
+      "username": 'offline_user',
+      "parentId": null
+    },
+    {
+      "id": 4,
+      "text": "this is first level",
+      "username": 'offline_user',
+      "parentId": 3
+    },
+    {
+      "id": 5,
+      "text": "second",
+      "username": 'offline_user',
+      "parentId": 4
+    },
+    {
+      "id": 6,
+      "text": "third",
+      "username": 'offline_user',
+      "parentId": 5
+    },
+    {
+      "id": 7,
+      "text": "I didn't spend time on mobile view css",
+      "username": 'offline_user',
+      "parentId": null
+    }
+  ]);
   const [counter, setCounter] = useState(8);
   const [username, setUsername] = useState();
-  const socket = useRef();
 
   const addComment = async (e, textRef, parentId = null) => {
     e?.preventDefault();
     if (textRef.current.value === '') return
 
-    socket.current.emit('comment', {
-      username,
-      text: textRef.current.value,
-      parentId: parentId
+    // it does impact
+    setComments(prev => {
+
+      const updatedComments = [...prev,
+      {
+        id: counter,
+        text: textRef.current.value,
+        parentId: parentId
+
+      }
+      ]
+      console.log(updatedComments)
+      textRef.current.value = ''
+      return updatedComments
     })
-    textRef.current.value = ''
+    setCounter(prev => prev + 1)
   }
 
   useEffect(() => {
     const name = prompt("enter your name");
-    setUsername(name);
-    const newSocket = io('https://snfrh097-3000.inc1.devtunnels.ms/') //replace with your backend link
-
-    newSocket.emit('add-user', name);
-
-    newSocket.on('messages', (chats) =>{
-      setComments(chats)
+    console.log(name)
+    const newSocket = io('http://localhost:3000')
+    newSocket.on('connection', () => {
+      console.log('connected to server');
+      newSocket.emit('add-user', user?.userId);
     })
-
-    socket.current = newSocket;
-
-    socket.current.on('newComment', (data) => {
-      console.log(data)
-      setComments((prev) => [...prev, data])
-    })
-
-    return () => {
-      socket.current.disconnect();
-    }
   }, [])
 
 
   return (
 
     <div className='ourComponent'>
-      <div key={'thisisnothing'} className='allTheComments'>
+      <div className='allTheComments'>
         {
           comments.filter(x => x.parentId === null).map(x => <Comment
-            key={x.id}
+            key={x._id}
             comment={x}
             addComment={addComment}
             comments={comments}
