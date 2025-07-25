@@ -5,4 +5,7 @@ or a file system where you can create folders and subfolders
 
 Integrated sockets for real time comments.
 
+![screen recording of the live application](/screenrecording.gif)
+
+
 here is the link: https://recursive-component-bay.vercel.app/
