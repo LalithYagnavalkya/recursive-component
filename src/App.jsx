@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     const name = prompt("enter your name");
     setUsername(name);
-    const newSocket = io('https://snfrh097-3000.inc1.devtunnels.ms/')
+    const newSocket = io('https://snfrh097-3000.inc1.devtunnels.ms/') //replace your url
 
     newSocket.emit('add-user', name);
 
