@@ -24,6 +24,7 @@ io.on("connection", (socket) => {
       
         console.log('connection happened')
         console.log(socket.id)
+        socket.emit('messages', chats)
 
         socket.on('add-user', (username) => {
                 users.push({ username, id: socket.id })
