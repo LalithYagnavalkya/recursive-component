@@ -9,3 +9,5 @@ Integrated sockets for real time comments.
 
 
 here is the link: https://recursive-component-bay.vercel.app/
+
+**To chekcout sockets integration switch to Dev branch** (which is offline)
